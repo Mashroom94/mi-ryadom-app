@@ -1,0 +1,43 @@
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+*.log
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jwk
+secrets/
+credentials/
+
+# Local databases and user uploads
+*.db
+*.sqlite
+*.sqlite3
+/data/
+/uploads/
+/public/uploads/
+
+# Sites/OpenAI service metadata and generated bundles
+.sites-runtime/
+.sites-package/
+.openai/
+outputs/
+exports/
+mi/
+github-export/
+*.zip
+Изображение Codex *.png
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

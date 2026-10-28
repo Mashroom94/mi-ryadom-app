@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title">
+  <title id="title">Мы рядом — две руки образуют сердце</title>
+  <defs>
+    <mask id="fingerCuts" maskUnits="userSpaceOnUse" x="0" y="0" width="320" height="300">
+      <rect width="320" height="300" fill="white"/>
+      <path d="M170 198 220 249M217 154l50 51" fill="none" stroke="black" stroke-width="11" stroke-linecap="round"/>
+    </mask>
+  </defs>
+  <g transform="translate(0 10)" mask="url(#fingerCuts)">
+    <path d="M155 274C132 254 55 195 20 137-13 83 20 24 68 12 105 5 133 19 155 37 177 19 205 5 242 12c48 12 81 71 48 125-35 58-112 117-135 137Z" fill="#6A72E4"/>
+    <path d="M104.419 94.0204C136.419 58.0204 126.42 65.0209 156.419 34.0204 177 19 205 5 242 12c48 12 81 71 48 125-3 5-7 10-11 15-13-28-29-70-60.581-62.9797C197.419 96.0203 186.419 106.02 153.419 131.02 120.419 156.02 84.4191 115.02 104.419 94.0204Z" fill="#F3A0CE"/>
+  </g>
+</svg>

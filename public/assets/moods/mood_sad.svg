@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Грусть</title>
+  <defs>
+    <radialGradient id="sadDrop" cx="0" cy="0" r="1" gradientTransform="translate(24 15) rotate(57) scale(48 43)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3F7FF"/>
+      <stop offset=".35" stop-color="#AFC6FF"/>
+      <stop offset=".72" stop-color="#7797E8"/>
+      <stop offset="1" stop-color="#5E75C9"/>
+    </radialGradient>
+    <linearGradient id="sadShine" x1="18" y1="12" x2="39" y2="43" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".96"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 5.5S11.2 29.1 11.2 43.1C11.2 54.1 20.4 61 32 61s20.8-6.9 20.8-17.9C52.8 29.1 32 5.5 32 5.5Z" fill="url(#sadDrop)"/>
+  <path d="M20.3 35.5c4.7-10.4 11.2-18.8 14.3-22.2-8.3 3.2-16.9 17.3-18.8 25.8-1.2 5.3.7 10 4.6 13.2-2.7-5.1-2.6-10.9-.1-16.8Z" fill="url(#sadShine)"/>
+  <ellipse cx="25" cy="19" rx="4.2" ry="7.1" transform="rotate(35 25 19)" fill="#FFFFFF" fill-opacity=".78"/>
+  <path d="M42.8 46.6c-3.5 5.2-9.9 7.3-15.8 5.1" fill="none" stroke="#DCE7FF" stroke-width="1.8" stroke-linecap="round" opacity=".78"/>
+</svg>
