@@ -7,5 +7,13 @@
     "directory": "dist/client",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application"
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "mi-ryadom-db",
+      "database_id": "afe647ae-3e49-4036-92fa-2e7da8410de3",
+      "migrations_dir": "drizzle"
+    }
+  ]
 }
