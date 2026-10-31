@@ -50,8 +50,8 @@ export function CameraCharacterArtwork({ body, videoRef }: { body: Character; vi
   }, [mask, media, videoRef])
 
   return <span className={`face-character camera-character camera-character--${body.id}`} style={{ aspectRatio: `${mask.canvasWidth} / ${mask.canvasHeight}`, '--face-x': `${mask.x}%`, '--face-y': `${mask.y}%`, '--face-width': `${mask.width}%`, '--face-height': `${mask.height}%` } as CSSProperties}>
-    <img className="face-character__body" src={body.transformerAssetPath ?? body.assetPath} alt="" aria-hidden="true" draggable="false" />
     <canvas ref={canvasRef} className="camera-character__canvas" aria-hidden="true" />
+    <img className="face-character__body" src={body.transformerAssetPath ?? body.assetPath} alt="" aria-hidden="true" draggable="false" />
     <video ref={videoRef} className="camera-character__source" autoPlay muted playsInline disablePictureInPicture aria-hidden="true" />
   </span>
 }

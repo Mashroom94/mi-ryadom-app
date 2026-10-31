@@ -52,6 +52,14 @@ export function isTicInviteEvent(event: PartnerEvent) {
   return event.type === 'notes' && event.payload === 'tic-invite'
 }
 
+export function ticResultFromEvent(event: PartnerEvent): 'win' | 'loss' | 'draw' | null {
+  if (event.type !== 'notes') return null
+  if (event.payload === 'tic-result-win') return 'win'
+  if (event.payload === 'tic-result-loss') return 'loss'
+  if (event.payload === 'tic-result-draw') return 'draw'
+  return null
+}
+
 export function isMoneyUpdatedEvent(event: PartnerEvent) {
   return event.type === 'notes' && event.payload === 'money-updated'
 }

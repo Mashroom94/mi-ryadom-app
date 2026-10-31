@@ -387,9 +387,9 @@
 .envelope-create h3 { grid-column: 1 / -1; margin: 0 0 2px; color: var(--ink-strong); font-size: .92rem; }
 .envelope-create label { display: grid; min-width: 0; gap: 5px; color: var(--muted); font-size: .7rem; }
 .envelope-create input { box-sizing: border-box; width: 100%; min-width: 0; min-height: 42px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 12px; color: var(--ink-strong); background: #fff; font: inherit; }
-.money-date-input { position: relative; display: grid; min-width: 0; }
+.money-date-input { position: relative; display: grid; box-sizing: border-box; width: 100%; max-width: 100%; min-width: 0; overflow: hidden; }
 .money-date-input > svg { position: absolute; z-index: 1; top: 50%; right: 11px; width: 17px; height: 17px; color: #6f7fd5; pointer-events: none; transform: translateY(-50%); }
-.money-date-input input { min-width: 0; padding-right: 38px !important; }
+.money-date-input input { display: block; box-sizing: border-box; width: 100%; max-width: 100%; min-width: 0; padding-right: 38px !important; -webkit-min-logical-width: 0; }
 .money-date-input input::-webkit-calendar-picker-indicator { width: 24px; height: 24px; opacity: 0; cursor: pointer; }
 .envelope-list { display: grid; min-width: 0; gap: 10px; }
 .money-envelope { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 19px; background: #fff; }

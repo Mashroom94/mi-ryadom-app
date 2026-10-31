@@ -12,7 +12,7 @@ import { deliveryFeedbackKey } from '../services/deliveryFeedback'
 import { isHomeSwipeSurface, pageAfterSwipe, resolveHomePage, shouldCelebrateStickerDelivery, type HomePageId } from '../services/homePagination'
 import { homeMoodOrder } from '../services/homeMoodOrder'
 import { localPartnerEventService } from '../services/partnerEvents'
-import { drawingIdFromEvent, isMoneyUpdatedEvent, isTicInviteEvent, isTicTurnEvent, latestReceivedEventId, receivedEventLabelKey, resolveUnseenCue, resolveUnseenDrawing } from '../services/partnerDisplay'
+import { drawingIdFromEvent, isMoneyUpdatedEvent, isTicInviteEvent, isTicTurnEvent, latestReceivedEventId, receivedEventLabelKey, resolveUnseenCue, resolveUnseenDrawing, ticResultFromEvent } from '../services/partnerDisplay'
 import { archiveDrawing, prepareDrawingReply } from '../services/sharedTools'
 import { canSendSelectedSign } from '../services/signComposer'
 import { shouldSendTouch } from '../services/touchThrottle'
@@ -70,6 +70,13 @@ export function HomePage() {
     }
     if (isTicTurnEvent(received)) {
       setToastMessage(state.profile.language === 'ru' ? 'Ваш ход в крестики-нолики' : 'Your turn in tic-tac-toe'); setToast(true); return
+    }
+    const ticResult = ticResultFromEvent(received)
+    if (ticResult) {
+      const messages = state.profile.language === 'ru'
+        ? { win: 'Вы выиграли в крестики-нолики', loss: 'Вы проиграли в крестики-нолики', draw: 'У вас ничья в крестики-нолики' }
+        : { win: 'You won at tic-tac-toe', loss: 'You lost at tic-tac-toe', draw: 'Your tic-tac-toe game ended in a draw' }
+      setToastMessage(messages[ticResult]); setToast(true); return
     }
     if (isMoneyUpdatedEvent(received)) {
       setToastMessage(state.profile.language === 'ru' ? 'В финансы внесены изменения' : 'Finances were updated'); setToast(true); return

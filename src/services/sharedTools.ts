@@ -26,7 +26,12 @@ export function archiveDrawingOnce(board: SharedBoard, id: string, createdAt = n
 }
 
 export function ticTacToeEventPayload(before: SharedBoard, after: SharedBoard) {
-  if (ticTacToeWinner(after.ticTacToe) || after.ticTacToe.every(Boolean)) return 'tic-finished'
+  const winner = ticTacToeWinner(after.ticTacToe)
+  if (winner) {
+    const movedMark = after.ticTacToe.find((cell, index) => cell && cell !== before.ticTacToe[index])
+    return movedMark === winner ? 'tic-result-loss' : 'tic-result-win'
+  }
+  if (after.ticTacToe.every(Boolean)) return 'tic-result-draw'
   return before.ticTacToe.every((cell) => !cell) ? 'tic-invite' : 'tic-turn'
 }
 

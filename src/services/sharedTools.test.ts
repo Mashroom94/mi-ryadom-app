@@ -79,6 +79,18 @@ describe('shared tools', () => {
     expect(ticTacToeEventPayload(first, second)).toBe('tic-turn')
   })
 
+  it('describes a finished tic-tac-toe game from the receiving partner perspective', () => {
+    const beforeWin = { ...board('2026-10-25T10:00:00Z'), ticTacToe: ['x', 'o', 'x', 'x', 'o', null, null, null, null] as SharedBoard['ticTacToe'] }
+    const afterWin = applyTicTacToeMove(beforeWin, 7)
+    expect(ticTacToeWinner(afterWin.ticTacToe)).toBe('o')
+    expect(ticTacToeEventPayload(beforeWin, afterWin)).toBe('tic-result-loss')
+
+    const beforeDraw = { ...board('2026-10-25T10:00:00Z'), ticTacToe: ['x', 'o', 'x', 'x', 'o', 'o', 'o', 'x', null] as SharedBoard['ticTacToe'] }
+    const afterDraw = applyTicTacToeMove(beforeDraw, 8)
+    expect(ticTacToeWinner(afterDraw.ticTacToe)).toBeNull()
+    expect(ticTacToeEventPayload(beforeDraw, afterDraw)).toBe('tic-result-draw')
+  })
+
   it('removes only the chosen saved drawing', () => {
     const current = { ...board('2026-10-25T10:00:00Z'), savedDrawings: [
       { id: 'keep', strokes: [], createdAt: '2026-10-25T10:00:00Z' },

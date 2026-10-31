@@ -23,7 +23,6 @@ export function CharacterArtwork({ character, onError }: { character: Character;
         className={`face-character face-character--${body.id} face-character--effect-${effect}`}
         style={{ aspectRatio: `${mask.canvasWidth} / ${mask.canvasHeight}`, '--face-x': `${mask.x}%`, '--face-y': `${mask.y}%`, '--face-width': `${mask.width}%`, '--face-height': `${mask.height}%`, '--face-photo-scale': renderedScale, '--face-photo-x': `${character.faceOffsetX ?? 0}%`, '--face-photo-y': `${character.faceOffsetY ?? 0}%`, '--face-effect-transform': effectTransform } as React.CSSProperties}
       >
-        <img className="face-character__body" src={body.transformerAssetPath ?? body.assetPath} alt="" aria-hidden="true" draggable="false" onError={onError} />
         <span className={`face-character__mask face-character__mask--${mask.family}`}>
           <svg viewBox={mask.viewBox} preserveAspectRatio="none" aria-hidden="true">
             <defs>
@@ -44,6 +43,7 @@ export function CharacterArtwork({ character, onError }: { character: Character;
             </g>
           </svg>
         </span>
+        <img className="face-character__body" src={body.transformerAssetPath ?? body.assetPath} alt="" aria-hidden="true" draggable="false" onError={onError} />
       </span>
     )
   }
