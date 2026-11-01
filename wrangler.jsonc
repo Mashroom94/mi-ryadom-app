@@ -3,6 +3,10 @@
   "name": "mi-ryadom-app",
   "main": "dist/server/index.js",
   "compatibility_date": "2026-05-15",
+  "keep_vars": true,
+  "vars": {
+    "VAPID_PUBLIC_KEY": "BMM9oSh3KOk-i4SfuWw7jYmNkw_2iHLLqNad5NUcOvC9Y5bJ6exIegzBbmorjbJY7Q_aIT2CP2mn2cDahjrjcMU"
+  },
   "assets": {
     "directory": "dist/client",
     "binding": "ASSETS",
